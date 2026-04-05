@@ -1,0 +1,142 @@
+2026-03-26 16:08:44 INFO     {'cuda': True, 'batch_size': 512, 'num_ent': 7128, 'num_rel': 230, 'ent_dim': 100, 'rel_dim': 100, 'time_dim': 20, 'state_dim': 100, 'action_dim': 200, 'mlp_input_dim': 300, 'mlp_hidden_dim': 100, 'path_length': 3, 'max_action_num': 50, 'lambda': 0.99, 'gamma': 0.95, 'ita': 0.01, 'zita': 0.9, 'beam_size': 100, 'entities_embeds_method': 'dynamic'}
+2026-03-26 16:08:44 INFO     Namespace(cuda=True, data_path='data/ICEWS14', do_train=False, do_test=True, save_path='logs', load_model_path='logs/checkpoint_60.pth', batch_size=512, max_epochs=400, num_workers=8, valid_epoch=30, lr=0.001, save_epoch=30, clip_gradient=10.0, test_batch_size=1, beam_size=100, test_inductive=False, IM=False, mu=0.1, ent_dim=100, rel_dim=100, state_dim=100, hidden_dim=100, time_dim=20, entities_embeds_method='dynamic', state_actions_path='state_actions_space.pkl', path_length=3, max_action_num=50, Lambda=0.99, Gamma=0.95, Ita=0.01, Zita=0.9, reward_shaping=True, time_span=24, attention_rewards_file='attention_rewards.pkl', attention_hidden_dim=304, attention_epochs=50, use_llm_tester=True, use_pure_llm_tester=False)
+2026-03-26 16:08:44 INFO     尝试加载状态动作空间文件: data/ICEWS14\state_actions_space.pkl
+2026-03-26 16:08:45 INFO     成功加载状态动作空间文件: data/ICEWS14\state_actions_space.pkl
+2026-03-26 16:08:47 INFO     测试模式：跳过加载优化器状态
+2026-03-26 16:08:47 INFO     Load pretrain model: logs/checkpoint_60.pth
+2026-03-26 16:08:47 INFO     Loading pre-computed attention rewards...
+2026-03-26 16:08:48 INFO     Initializing Multi-Agent CoH Predictor...
+2026-03-26 16:08:48 INFO     Multi-Agent CoH Predictor initialized.
+2026-03-26 16:08:48 INFO     Using two-phase LLM-enhanced Tester...
+2026-03-26 16:08:48 INFO     ========== 开始两阶段LLM测试 ==========
+2026-03-26 16:12:54 INFO     阶段1完成，已释放GPU内存
+2026-03-26 16:12:54 INFO     处理样本 1/26444: 头实体=0, 关系=18, 时间戳=7536, 尾实体=384
+2026-03-26 16:12:54 INFO     RL候选实体: ['Benjamin Netanyahu', 'China', 'John Kerry', 'UN Security Council', 'Iran', 'Mohammad Javad Zarif', 'Iraq', 'Canada', 'Sergey Viktorovich Lavrov', 'Foreign Affairs (Russia)', 'Nasser Judeh', 'Catherine Ashton', 'Oman', 'Julie Bishop', 'Haider Al-Abadi']
+2026-03-26 16:13:29 INFO     LLM预测结果: [('llm_prediction', 'Sergey Viktorovich Lavrov'), ('llm_prediction', 'China'), ('llm_prediction', 'Iran'), ('llm_prediction', 'UN Security Council'), ('llm_prediction', 'Nasser Judeh'), ('llm_prediction', 'Julie Bishop'), ('llm_prediction', 'John Kerry'), ('llm_prediction', 'Benjamin Netanyahu'), ('llm_prediction', 'Catherine Ashton'), ('llm_prediction', 'Oman')]
+2026-03-26 16:13:29 INFO     真实答案: Sergey Viktorovich Lavrov
+2026-03-26 16:13:29 INFO     过滤后的候选实体: ['Sergey Viktorovich Lavrov', 'China', 'Iran', 'UN Security Council', 'Nasser Judeh', 'Julie Bishop', 'John Kerry', 'Benjamin Netanyahu', 'Catherine Ashton', 'Oman']
+2026-03-26 16:13:29 INFO     排名: 1
+2026-03-26 16:13:29 INFO     当前样本指标: MRR=1.0000, HITS@1=1.0, HITS@3=1.0, HITS@10=1.0
+2026-03-26 16:13:29 INFO     ----------------------------------------
+2026-03-26 16:13:29 INFO     处理样本 2/26444: 头实体=1, 关系=18, 时间戳=7536, 尾实体=1289
+2026-03-26 16:13:29 INFO     RL候选实体: ['实体_0', 'Benjamin Netanyahu', 'John Kerry', 'UN Security Council', 'Iran', 'Barack Obama', 'Xi Jinping', 'Fran\xe7ois Hollande', 'Hamas', 'Israeli Defense Forces', 'Joseph Robinette Biden', 'Sergey Viktorovich Lavrov', 'Yair Lapid', 'Police (Israel)', 'Media Personnel (United States)', 'Uri Ariel', "Gideon Sa'ar", 'Federica Mogherini', 'Reuven Rivlin', 'Pavlo Klimkin']
+2026-03-26 16:13:45 INFO     LLM预测结果: [('rl_candidate_fallback', '实体_0'), ('rl_candidate_fallback', 'Benjamin Netanyahu'), ('rl_candidate_fallback', 'John Kerry'), ('rl_candidate_fallback', 'UN Security Council'), ('rl_candidate_fallback', 'Iran'), ('rl_candidate_fallback', 'Barack Obama'), ('rl_candidate_fallback', 'Xi Jinping'), ('rl_candidate_fallback', 'Fran\xe7ois Hollande'), ('rl_candidate_fallback', 'Hamas'), ('rl_candidate_fallback', 'Israeli Defense Forces')]
+2026-03-26 16:13:45 INFO     真实答案: Likud
+2026-03-26 16:13:45 INFO     过滤后的候选实体: ['实体_0', 'Benjamin Netanyahu', 'John Kerry', 'UN Security Council', 'Iran', 'Barack Obama', 'Xi Jinping', 'Fran\xe7ois Hollande', 'Hamas', 'Israeli Defense Forces']
+2026-03-26 16:13:45 INFO     未找到正确答案，设置排名为: 7128
+2026-03-26 16:13:45 INFO     当前样本指标: MRR=0.0001, HITS@1=0.0, HITS@3=0.0, HITS@10=0.0
+2026-03-26 16:13:45 INFO     ----------------------------------------
+2026-03-26 16:13:45 INFO     处理样本 3/26444: 头实体=5, 关系=10, 时间戳=7536, 尾实体=18
+2026-03-26 16:13:45 INFO     RL候选实体: ['Japan', 'South Korea', 'China', 'Afghanistan', 'Xi Jinping', 'United Arab Emirates', 'Citizen (Yemen)', 'Canada', 'Bahrain', 'Head of Government (China)', 'Myanmar']
+2026-03-26 16:14:00 INFO     LLM预测结果: [('llm_prediction', 'China'), ('rl_candidate_fallback', 'Japan'), ('rl_candidate_fallback', 'South Korea'), ('rl_candidate_fallback', 'Afghanistan'), ('rl_candidate_fallback', 'Xi Jinping'), ('rl_candidate_fallback', 'United Arab Emirates'), ('rl_candidate_fallback', 'Citizen (Yemen)'), ('rl_candidate_fallback', 'Canada'), ('rl_candidate_fallback', 'Bahrain'), ('rl_candidate_fallback', 'Head of Government (China)')]
+2026-03-26 16:14:00 INFO     真实答案: China
+2026-03-26 16:14:00 INFO     过滤后的候选实体: ['China', 'Japan', 'South Korea', 'Afghanistan', 'Xi Jinping', 'United Arab Emirates', 'Citizen (Yemen)', 'Canada', 'Bahrain', 'Head of Government (China)']
+2026-03-26 16:14:00 INFO     排名: 1
+2026-03-26 16:14:00 INFO     当前样本指标: MRR=1.0000, HITS@1=1.0, HITS@3=1.0, HITS@10=1.0
+2026-03-26 16:14:00 INFO     ----------------------------------------
+2026-03-26 16:14:00 INFO     处理样本 4/26444: 头实体=5, 关系=13, 时间戳=7536, 尾实体=329
+2026-03-26 16:14:00 INFO     RL候选实体: ['South Korea', 'China', 'Citizen (Australia)', 'Xi Jinping', 'United Arab Emirates', 'Citizen (Yemen)', 'Citizen (South Korea)', 'Canada', 'Militant (Yemen)', 'Armed Rebel (Yemen)', 'Fumio Kishida', 'Head of Government (China)', 'Governor (Japan)', 'Myanmar']
+2026-03-26 16:14:24 INFO     LLM预测结果: [('llm_prediction', 'Citizen (South Korea)'), ('llm_prediction', 'South Korea'), ('llm_prediction', 'Fumio Kishida'), ('llm_prediction', 'Governor (Japan)'), ('llm_prediction', 'United Arab Emirates'), ('llm_prediction', 'Myanmar'), ('llm_prediction', 'China'), ('llm_prediction', 'Canada'), ('llm_prediction', 'Armed Rebel (Yemen)'), ('llm_prediction', 'Militant (Yemen)')]
+2026-03-26 16:14:24 INFO     真实答案: Citizen (South Korea)
+2026-03-26 16:14:24 INFO     过滤后的候选实体: ['Citizen (South Korea)', 'South Korea', 'Fumio Kishida', 'Governor (Japan)', 'United Arab Emirates', 'Myanmar', 'China', 'Canada', 'Armed Rebel (Yemen)', 'Militant (Yemen)']
+2026-03-26 16:14:24 INFO     排名: 1
+2026-03-26 16:14:24 INFO     当前样本指标: MRR=1.0000, HITS@1=1.0, HITS@3=1.0, HITS@10=1.0
+2026-03-26 16:14:24 INFO     ----------------------------------------
+2026-03-26 16:14:25 INFO     处理样本 5/26444: 头实体=5, 关系=15, 时间戳=7536, 尾实体=18
+2026-03-26 16:14:25 INFO     RL候选实体: ['South Korea', 'China', 'Citizen (Australia)', 'Xi Jinping', 'United Arab Emirates', 'Military (China)', 'Citizen (Yemen)', 'Citizen (South Korea)', 'Canada', 'Fumio Kishida', 'Head of Government (China)', 'Governor (Japan)', 'Protester (Hong Kong)']
+2026-03-26 16:14:44 INFO     LLM预测结果: [('rl_candidate_fallback', 'South Korea'), ('rl_candidate_fallback', 'China'), ('rl_candidate_fallback', 'Citizen (Australia)'), ('rl_candidate_fallback', 'Xi Jinping'), ('rl_candidate_fallback', 'United Arab Emirates'), ('rl_candidate_fallback', 'Military (China)'), ('rl_candidate_fallback', 'Citizen (Yemen)'), ('rl_candidate_fallback', 'Citizen (South Korea)'), ('rl_candidate_fallback', 'Canada'), ('rl_candidate_fallback', 'Fumio Kishida')]
+2026-03-26 16:14:44 INFO     真实答案: China
+2026-03-26 16:14:44 INFO     过滤后的候选实体: ['South Korea', 'China', 'Citizen (Australia)', 'Xi Jinping', 'United Arab Emirates', 'Military (China)', 'Citizen (Yemen)', 'Citizen (South Korea)', 'Canada', 'Fumio Kishida']
+2026-03-26 16:14:44 INFO     排名: 2
+2026-03-26 16:14:44 INFO     当前样本指标: MRR=0.5000, HITS@1=0.0, HITS@3=1.0, HITS@10=1.0
+2026-03-26 16:14:44 INFO     ----------------------------------------
+2026-03-26 16:14:44 INFO     处理样本 6/26444: 头实体=5, 关系=22, 时间戳=7536, 尾实体=2687
+2026-03-26 16:14:44 INFO     RL候选实体: ['Japan', 'South Korea', 'China', 'Afghanistan', 'Xi Jinping', 'Thailand', 'Middle East', 'United Arab Emirates', 'Cabinet / Council of Ministers / Advisors (Yemen)', 'Citizen (Yemen)', 'Canada', 'Militant (Yemen)', 'Armed Rebel (Yemen)', 'Fumio Kishida', 'Bahrain', 'Head of Government (China)', 'Tajikistan', 'Governor (Japan)', 'Myanmar']
+2026-03-26 16:15:04 INFO     LLM预测结果: [('llm_prediction', 'Thailand'), ('llm_prediction', 'South Korea'), ('llm_prediction', 'Fumio Kishida'), ('llm_prediction', 'Canada'), ('llm_prediction', 'Armed Rebel (Yemen)'), ('llm_prediction', 'Citizen (Yemen)'), ('llm_prediction', 'Middle East'), ('llm_prediction', 'United Arab Emirates'), ('llm_prediction', 'Tajikistan'), ('rl_candidate_fallback', 'Japan')]
+2026-03-26 16:15:04 INFO     真实答案: Association of Southeast Asian Nations
+2026-03-26 16:15:04 INFO     过滤后的候选实体: ['Thailand', 'South Korea', 'Fumio Kishida', 'Canada', 'Armed Rebel (Yemen)', 'Citizen (Yemen)', 'Middle East', 'United Arab Emirates', 'Tajikistan', 'Japan']
+2026-03-26 16:15:04 INFO     未找到正确答案，设置排名为: 7128
+2026-03-26 16:15:04 INFO     当前样本指标: MRR=0.0001, HITS@1=0.0, HITS@3=0.0, HITS@10=0.0
+2026-03-26 16:15:04 INFO     ----------------------------------------
+2026-03-26 16:15:05 INFO     处理样本 7/26444: 头实体=5, 关系=41, 时间戳=7536, 尾实体=12
+2026-03-26 16:15:05 INFO     RL候选实体: ['Japan', 'North Korea', 'South Korea', 'China', 'Afghanistan', 'Xi Jinping', 'United Arab Emirates', 'Citizen (Yemen)', 'Canada', 'Fumio Kishida', 'Bahrain', 'Head of Government (China)', 'Governor (Japan)']
+2026-03-26 16:15:32 INFO     LLM预测结果: [('llm_prediction', 'South Korea'), ('llm_prediction', 'Fumio Kishida'), ('llm_prediction', 'China'), ('llm_prediction', 'North Korea'), ('llm_prediction', 'Afghanistan'), ('llm_prediction', 'United Arab Emirates'), ('llm_prediction', 'Bahrain'), ('llm_prediction', 'Head of Government (China)'), ('rl_candidate_fallback', 'Japan'), ('rl_candidate_fallback', 'Xi Jinping')]
+2026-03-26 16:15:32 INFO     真实答案: South Korea
+2026-03-26 16:15:32 INFO     过滤后的候选实体: ['South Korea', 'Fumio Kishida', 'China', 'North Korea', 'Afghanistan', 'United Arab Emirates', 'Bahrain', 'Head of Government (China)', 'Japan', 'Xi Jinping']
+2026-03-26 16:15:32 INFO     排名: 1
+2026-03-26 16:15:32 INFO     当前样本指标: MRR=1.0000, HITS@1=1.0, HITS@3=1.0, HITS@10=1.0
+2026-03-26 16:15:32 INFO     ----------------------------------------
+2026-03-26 16:15:33 INFO     处理样本 8/26444: 头实体=5, 关系=43, 时间戳=7536, 尾实体=18
+2026-03-26 16:15:33 INFO     RL候选实体: ['Japan', 'South Korea', 'China', 'Barack Obama', 'Xi Jinping', 'United Arab Emirates', 'Citizen (Yemen)', 'Canada', 'Head of Government (China)', 'Governor (Japan)']
+2026-03-26 16:16:04 INFO     LLM预测结果: [('llm_prediction', 'China'), ('rl_candidate_fallback', 'Japan'), ('rl_candidate_fallback', 'South Korea'), ('rl_candidate_fallback', 'Barack Obama'), ('rl_candidate_fallback', 'Xi Jinping'), ('rl_candidate_fallback', 'United Arab Emirates'), ('rl_candidate_fallback', 'Citizen (Yemen)'), ('rl_candidate_fallback', 'Canada'), ('rl_candidate_fallback', 'Head of Government (China)'), ('rl_candidate_fallback', 'Governor (Japan)')]
+2026-03-26 16:16:04 INFO     真实答案: China
+2026-03-26 16:16:04 INFO     过滤后的候选实体: ['China', 'Japan', 'South Korea', 'Barack Obama', 'Xi Jinping', 'United Arab Emirates', 'Citizen (Yemen)', 'Canada', 'Head of Government (China)', 'Governor (Japan)']
+2026-03-26 16:16:04 INFO     排名: 1
+2026-03-26 16:16:04 INFO     当前样本指标: MRR=1.0000, HITS@1=1.0, HITS@3=1.0, HITS@10=1.0
+2026-03-26 16:16:04 INFO     ----------------------------------------
+2026-03-26 16:16:04 INFO     处理样本 9/26444: 头实体=8, 关系=12, 时间戳=7536, 尾实体=7
+2026-03-26 16:16:04 INFO     RL候选实体: ['Japan', 'North Korea', 'South Korea', 'China', 'Barack Obama', 'Government (United States)', 'Ryoo Kihl-jae', 'Citizen (South Korea)', 'Vietnam', 'Foreign Affairs (South Korea)', 'Head of Government (South Korea)', 'Envoy (United States)', 'Defector (North Korea)', 'Laos', 'Military Personnel (South Korea)', 'Indigenous People (United States)', 'Intelligence Officer (United States)', 'Jeffrey Fowle', 'Detainee (United States)']
+2026-03-26 16:16:27 INFO     LLM预测结果: [('llm_prediction', 'Citizen (South Korea)'), ('llm_prediction', 'Defector (North Korea)'), ('llm_prediction', 'Foreign Affairs (South Korea)'), ('llm_prediction', 'Head of Government (South Korea)'), ('llm_prediction', 'Envoy (United States)'), ('llm_prediction', 'Intelligence Officer (United States)'), ('llm_prediction', 'Jeffrey Fowle'), ('llm_prediction', 'Detainee (United States)'), ('rl_candidate_fallback', 'Japan'), ('rl_candidate_fallback', 'North Korea')]
+2026-03-26 16:16:27 INFO     真实答案: Citizen (North Korea)
+2026-03-26 16:16:27 INFO     过滤后的候选实体: ['Citizen (South Korea)', 'Defector (North Korea)', 'Foreign Affairs (South Korea)', 'Head of Government (South Korea)', 'Envoy (United States)', 'Intelligence Officer (United States)', 'Jeffrey Fowle', 'Detainee (United States)', 'Japan', 'North Korea']
+2026-03-26 16:16:27 INFO     未找到正确答案，设置排名为: 7128
+2026-03-26 16:16:27 INFO     当前样本指标: MRR=0.0001, HITS@1=0.0, HITS@3=0.0, HITS@10=0.0
+2026-03-26 16:16:27 INFO     ----------------------------------------
+2026-03-26 16:16:27 INFO     处理样本 10/26444: 头实体=8, 关系=17, 时间戳=7536, 尾实体=12
+2026-03-26 16:16:27 INFO     RL候选实体: ['Japan', 'North Korea', 'South Korea', 'China', 'Barack Obama', 'Government (United States)', 'Ryoo Kihl-jae', 'Citizen (South Korea)', 'Vietnam', 'Foreign Affairs (South Korea)', 'Head of Government (South Korea)', 'Envoy (United States)', 'Defector (North Korea)', 'Laos', 'Indigenous People (United States)', 'Intelligence Officer (United States)', 'Detainee (United States)']
+2026-03-26 16:17:25 INFO     LLM预测结果: [('llm_prediction', 'South Korea'), ('llm_prediction', 'North Korea'), ('llm_prediction', 'Japan'), ('llm_prediction', 'China'), ('rl_candidate_fallback', 'Barack Obama'), ('rl_candidate_fallback', 'Government (United States)'), ('rl_candidate_fallback', 'Ryoo Kihl-jae'), ('rl_candidate_fallback', 'Citizen (South Korea)'), ('rl_candidate_fallback', 'Vietnam'), ('rl_candidate_fallback', 'Foreign Affairs (South Korea)')]
+2026-03-26 16:17:25 INFO     真实答案: South Korea
+2026-03-26 16:17:25 INFO     过滤后的候选实体: ['South Korea', 'North Korea', 'Japan', 'China', 'Barack Obama', 'Government (United States)', 'Ryoo Kihl-jae', 'Citizen (South Korea)', 'Vietnam', 'Foreign Affairs (South Korea)']
+2026-03-26 16:17:25 INFO     排名: 1
+2026-03-26 16:17:25 INFO     当前样本指标: MRR=1.0000, HITS@1=1.0, HITS@3=1.0, HITS@10=1.0
+2026-03-26 16:17:25 INFO     ----------------------------------------
+2026-03-26 16:17:25 INFO     处理样本 11/26444: 头实体=8, 关系=25, 时间戳=7536, 尾实体=329
+2026-03-26 16:17:25 INFO     RL候选实体: ['Japan', 'North Korea', 'South Korea', 'China', 'Barack Obama', 'Government (United States)', 'Ryoo Kihl-jae', 'Citizen (South Korea)', 'Vietnam', 'Head of Government (South Korea)', 'Envoy (United States)', 'Defector (North Korea)', 'Laos', 'Indigenous People (United States)', 'Intelligence Officer (United States)', 'Jeffrey Fowle', 'Detainee (United States)']
+2026-03-26 16:17:59 INFO     LLM预测结果: [('llm_prediction', 'Citizen (South Korea)'), ('llm_prediction', 'Head of Government (South Korea)'), ('llm_prediction', 'Government (United States)'), ('llm_prediction', 'Defector (North Korea)'), ('llm_prediction', 'Vietnam'), ('llm_prediction', 'South Korea'), ('llm_prediction', 'Japan'), ('llm_prediction', 'Barack Obama'), ('llm_prediction', 'Jeffrey Fowle'), ('rl_candidate_fallback', 'North Korea')]
+2026-03-26 16:17:59 INFO     真实答案: Citizen (South Korea)
+2026-03-26 16:17:59 INFO     过滤后的候选实体: ['Citizen (South Korea)', 'Head of Government (South Korea)', 'Government (United States)', 'Defector (North Korea)', 'Vietnam', 'South Korea', 'Japan', 'Barack Obama', 'Jeffrey Fowle', 'North Korea']
+2026-03-26 16:17:59 INFO     排名: 1
+2026-03-26 16:17:59 INFO     当前样本指标: MRR=1.0000, HITS@1=1.0, HITS@3=1.0, HITS@10=1.0
+2026-03-26 16:17:59 INFO     ----------------------------------------
+2026-03-26 16:17:59 INFO     处理样本 12/26444: 头实体=8, 关系=93, 时间戳=7536, 尾实体=12
+2026-03-26 16:17:59 INFO     RL候选实体: ['Japan', 'North Korea', 'South Korea', 'China', 'Barack Obama', 'Government (United States)', 'Ryoo Kihl-jae', 'Citizen (South Korea)', 'Vietnam', 'Foreign Affairs (South Korea)', 'Envoy (United States)', 'Defector (North Korea)', 'Laos', 'Military Personnel (South Korea)', 'Indigenous People (United States)', 'Intelligence Officer (United States)', 'Jeffrey Fowle', 'Detainee (United States)']
+2026-03-26 16:18:23 INFO     LLM预测结果: [('llm_prediction', 'South Korea'), ('llm_prediction', 'North Korea'), ('llm_prediction', 'Foreign Affairs (South Korea)'), ('llm_prediction', 'Government (United States)'), ('llm_prediction', 'Citizen (South Korea)'), ('llm_prediction', 'Jeffrey Fowle'), ('llm_prediction', 'Detainee (United States)'), ('llm_prediction', 'Intelligence Officer (United States)'), ('llm_prediction', 'Barack Obama'), ('rl_candidate_fallback', 'Japan')]
+2026-03-26 16:18:23 INFO     真实答案: South Korea
+2026-03-26 16:18:23 INFO     过滤后的候选实体: ['South Korea', 'North Korea', 'Foreign Affairs (South Korea)', 'Government (United States)', 'Citizen (South Korea)', 'Jeffrey Fowle', 'Detainee (United States)', 'Intelligence Officer (United States)', 'Barack Obama', 'Japan']
+2026-03-26 16:18:23 INFO     排名: 1
+2026-03-26 16:18:23 INFO     当前样本指标: MRR=1.0000, HITS@1=1.0, HITS@3=1.0, HITS@10=1.0
+2026-03-26 16:18:23 INFO     ----------------------------------------
+2026-03-26 16:18:23 INFO     处理样本 13/26444: 头实体=11, 关系=14, 时间戳=7536, 尾实体=6711
+2026-03-26 16:18:23 INFO     RL候选实体: ['Japan', 'North Korea', 'South Korea', 'China', 'Iran', 'Barack Obama', 'Central Intelligence Agency', 'Myanmar', 'Men (United States)', 'Media Personnel (Australia)', 'Legislature (South Korea)', 'High Ranking Military Personnel (North Korea)']
+2026-03-26 16:18:54 INFO     LLM预测结果: [('llm_prediction', 'North Korea'), ('llm_prediction', 'Japan'), ('llm_prediction', 'Myanmar'), ('llm_prediction', 'South Korea'), ('llm_prediction', 'China'), ('llm_prediction', 'Iran'), ('llm_prediction', 'Barack Obama'), ('llm_prediction', 'Central Intelligence Agency'), ('llm_prediction', 'Men (United States)'), ('llm_prediction', 'Media Personnel (Australia)')]
+2026-03-26 16:18:54 INFO     真实答案: Nurse (North Korea)
+2026-03-26 16:18:54 INFO     过滤后的候选实体: ['North Korea', 'Japan', 'Myanmar', 'South Korea', 'China', 'Iran', 'Barack Obama', 'Central Intelligence Agency', 'Men (United States)', 'Media Personnel (Australia)']
+2026-03-26 16:18:54 INFO     未找到正确答案，设置排名为: 7128
+2026-03-26 16:18:54 INFO     当前样本指标: MRR=0.0001, HITS@1=0.0, HITS@3=0.0, HITS@10=0.0
+2026-03-26 16:18:54 INFO     ----------------------------------------
+2026-03-26 16:18:54 INFO     处理样本 14/26444: 头实体=12, 关系=0, 时间戳=7536, 尾实体=18
+2026-03-26 16:18:54 INFO     RL候选实体: ['Japan', 'North Korea', 'China', 'Afghanistan', 'Barack Obama', 'Xi Jinping', 'Government (United States)', 'Citizen (South Korea)', 'Sierra Leone', 'Lawyer/Attorney (South Korea)', 'Criminal (South Korea)', 'International Government Organizations', 'Noh Kwang-il']
+2026-03-26 16:19:21 INFO     LLM预测结果: [('llm_prediction', 'China'), ('llm_prediction', 'Barack Obama'), ('llm_prediction', 'Xi Jinping'), ('llm_prediction', 'Government (United States)'), ('llm_prediction', 'Citizen (South Korea)'), ('llm_prediction', 'International Government Organizations'), ('llm_prediction', 'Japan'), ('llm_prediction', 'North Korea'), ('llm_prediction', 'Afghanistan'), ('llm_prediction', 'Lawyer/Attorney (South Korea)')]
+2026-03-26 16:19:21 INFO     真实答案: China
+2026-03-26 16:19:21 INFO     过滤后的候选实体: ['China', 'Barack Obama', 'Xi Jinping', 'Government (United States)', 'Citizen (South Korea)', 'International Government Organizations', 'Japan', 'North Korea', 'Afghanistan', 'Lawyer/Attorney (South Korea)']
+2026-03-26 16:19:21 INFO     排名: 1
+2026-03-26 16:19:21 INFO     当前样本指标: MRR=1.0000, HITS@1=1.0, HITS@3=1.0, HITS@10=1.0
+2026-03-26 16:19:21 INFO     ----------------------------------------
+2026-03-26 16:19:21 INFO     处理样本 15/26444: 头实体=12, 关系=2, 时间戳=7536, 尾实体=329
+2026-03-26 16:19:21 INFO     RL候选实体: ['Japan', 'North Korea', 'South Korea', 'China', 'Xi Jinping', 'Government (United States)', 'Citizen (South Korea)', 'Sierra Leone', 'Lawyer/Attorney (South Korea)', 'Criminal (South Korea)', 'International Government Organizations', 'Tourist (South Korea)', 'Noh Kwang-il']
+2026-03-26 16:19:42 INFO     LLM预测结果: [('llm_prediction', 'Citizen (South Korea)'), ('llm_prediction', 'Japan'), ('llm_prediction', 'South Korea'), ('llm_prediction', 'North Korea'), ('llm_prediction', 'China'), ('llm_prediction', 'Lawyer/Attorney (South Korea)'), ('llm_prediction', 'Criminal (South Korea)'), ('llm_prediction', 'International Government Organizations'), ('llm_prediction', 'Tourist (South Korea)'), ('rl_candidate_fallback', 'Xi Jinping')]
+2026-03-26 16:19:42 INFO     真实答案: Citizen (South Korea)
+2026-03-26 16:19:42 INFO     过滤后的候选实体: ['Citizen (South Korea)', 'Japan', 'South Korea', 'North Korea', 'China', 'Lawyer/Attorney (South Korea)', 'Criminal (South Korea)', 'International Government Organizations', 'Tourist (South Korea)', 'Xi Jinping']
+2026-03-26 16:19:42 INFO     排名: 1
+2026-03-26 16:19:42 INFO     当前样本指标: MRR=1.0000, HITS@1=1.0, HITS@3=1.0, HITS@10=1.0
+2026-03-26 16:19:42 INFO     ----------------------------------------
+2026-03-26 16:19:42 INFO     处理样本 16/26444: 头实体=12, 关系=4, 时间戳=7536, 尾实体=1532
+2026-03-26 16:19:42 INFO     RL候选实体: ['Japan', 'North Korea', 'Kim Jong-Un', 'South Korea', 'China', 'Xi Jinping', 'Government (United States)', 'Citizen (South Korea)', 'Citizen (Uganda)', 'Sierra Leone', 'Lawyer/Attorney (South Korea)', 'Police (South Korea)', 'Criminal (South Korea)', 'International Government Organizations', 'Tourist (South Korea)', 'Noh Kwang-il']
+2026-03-26 16:20:02 INFO     LLM预测结果: [('llm_prediction', 'Lawyer/Attorney (South Korea)'), ('llm_prediction', 'Government (United States)'), ('llm_prediction', 'Citizen (South Korea)'), ('rl_candidate_fallback', 'Japan'), ('rl_candidate_fallback', 'North Korea'), ('rl_candidate_fallback', 'Kim Jong-Un'), ('rl_candidate_fallback', 'South Korea'), ('rl_candidate_fallback', 'China'), ('rl_candidate_fallback', 'Xi Jinping'), ('rl_candidate_fallback', 'Citizen (Uganda)')]
+2026-03-26 16:20:02 INFO     真实答案: Lawyer/Attorney (South Korea)
+2026-03-26 16:20:02 INFO     过滤后的候选实体: ['Lawyer/Attorney (South Korea)', 'Government (United States)', 'Citizen (South Korea)', 'Japan', 'North Korea', 'Kim Jong-Un', 'South Korea', 'China', 'Xi Jinping', 'Citizen (Uganda)']
+2026-03-26 16:20:02 INFO     排名: 1
+2026-03-26 16:20:02 INFO     当前样本指标: MRR=1.0000, HITS@1=1.0, HITS@3=1.0, HITS@10=1.0
+2026-03-26 16:20:02 INFO     ----------------------------------------
+2026-03-26 16:20:02 INFO     处理样本 17/26444: 头实体=12, 关系=7, 时间戳=7536, 尾实体=936
+2026-03-26 16:20:02 INFO     RL候选实体: ['Japan', 'North Korea', 'China', 'John Kerry', 'Barack Obama', 'Xi Jinping', 'Government (United States)', 'Ashraf Ghani Ahmadzai', 'Citizen (South Korea)', 'Shura Council', 'Head of Government (Afghanistan)', 'Foreign Affairs (Latvia)', 'Sierra Leone', 'Sheikh Hamad bin Isa al Khalifah', 'Lawyer/Attorney (South Korea)', 'Criminal (South Korea)', 'International Government Organizations', 'Tourist (South Korea)', 'Tony Tan Keng Yam', 'Noh Kwang-il']

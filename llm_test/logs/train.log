@@ -1,0 +1,83 @@
+2026-03-26 14:47:20 INFO     {'cuda': True, 'batch_size': 512, 'num_ent': 7128, 'num_rel': 230, 'ent_dim': 100, 'rel_dim': 100, 'time_dim': 20, 'state_dim': 100, 'action_dim': 200, 'mlp_input_dim': 300, 'mlp_hidden_dim': 100, 'path_length': 3, 'max_action_num': 50, 'lambda': 0.99, 'gamma': 0.95, 'ita': 0.01, 'zita': 0.9, 'beam_size': 100, 'entities_embeds_method': 'dynamic'}
+2026-03-26 14:47:20 INFO     Namespace(cuda=True, data_path='data/ICEWS14', do_train=True, do_test=False, save_path='logs', load_model_path='logs', batch_size=512, max_epochs=400, num_workers=8, valid_epoch=30, lr=0.001, save_epoch=30, clip_gradient=10.0, test_batch_size=1, beam_size=100, test_inductive=False, IM=False, mu=0.1, ent_dim=100, rel_dim=100, state_dim=100, hidden_dim=100, time_dim=20, entities_embeds_method='dynamic', state_actions_path='state_actions_space.pkl', path_length=3, max_action_num=50, Lambda=0.99, Gamma=0.95, Ita=0.01, Zita=0.9, reward_shaping=True, time_span=24, attention_rewards_file='attention_rewards.pkl', attention_hidden_dim=304, attention_epochs=50, use_llm_tester=False, use_pure_llm_tester=False)
+2026-03-26 14:47:20 INFO     尝试加载状态动作空间文件: data/ICEWS14\state_actions_space.pkl
+2026-03-26 14:47:21 INFO     成功加载状态动作空间文件: data/ICEWS14\state_actions_space.pkl
+2026-03-26 14:47:23 INFO     Loading pre-computed attention rewards...
+2026-03-26 14:47:23 INFO     Initializing Multi-Agent CoH Predictor...
+2026-03-26 14:47:23 INFO     Multi-Agent CoH Predictor initialized.
+2026-03-26 14:47:23 INFO     Start Training......
+2026-03-26 14:47:53 INFO     Epoch 0/400 Loss: 0.020308811217546463, reward: 0.12715916335582733, successful = 0.1272
+2026-03-26 14:48:21 INFO     Epoch 1/400 Loss: 0.01277465932071209, reward: 0.1685582995414734, successful = 0.1686
+2026-03-26 14:48:49 INFO     Epoch 2/400 Loss: -0.00019776285625994205, reward: 0.20729993283748627, successful = 0.2073
+2026-03-26 14:49:17 INFO     Epoch 3/400 Loss: -0.010739524848759174, reward: 0.23660384118556976, successful = 0.2366
+2026-03-26 14:49:45 INFO     Epoch 4/400 Loss: -0.01178787648677826, reward: 0.2509133815765381, successful = 0.2509
+2026-03-26 14:50:12 INFO     Epoch 5/400 Loss: -0.01701178029179573, reward: 0.2669799029827118, successful = 0.2670
+2026-03-26 14:50:40 INFO     Epoch 6/400 Loss: -0.015643786638975143, reward: 0.27831515669822693, successful = 0.2783
+2026-03-26 14:51:09 INFO     Epoch 7/400 Loss: -0.012693533673882484, reward: 0.2795027792453766, successful = 0.2795
+2026-03-26 14:51:37 INFO     Epoch 8/400 Loss: -0.011920261196792126, reward: 0.28684455156326294, successful = 0.2868
+2026-03-26 14:52:06 INFO     Epoch 9/400 Loss: -0.012392906472086906, reward: 0.29203328490257263, successful = 0.2920
+2026-03-26 14:52:35 INFO     Epoch 10/400 Loss: -0.013608003035187721, reward: 0.29607054591178894, successful = 0.2961
+2026-03-26 14:53:04 INFO     Epoch 11/400 Loss: -0.011024403385818005, reward: 0.29797887802124023, successful = 0.2980
+2026-03-26 14:53:33 INFO     Epoch 12/400 Loss: -0.010707354173064232, reward: 0.3012482523918152, successful = 0.3012
+2026-03-26 14:54:01 INFO     Epoch 13/400 Loss: -0.012822171673178673, reward: 0.3015557527542114, successful = 0.3016
+2026-03-26 14:54:30 INFO     Epoch 14/400 Loss: -0.01070336066186428, reward: 0.3051536977291107, successful = 0.3052
+2026-03-26 14:54:57 INFO     Epoch 15/400 Loss: -0.010459131561219692, reward: 0.30420857667922974, successful = 0.3042
+2026-03-26 14:55:26 INFO     Epoch 16/400 Loss: -0.009510754607617855, reward: 0.3057122230529785, successful = 0.3057
+2026-03-26 14:55:53 INFO     Epoch 17/400 Loss: -0.009598677046597004, reward: 0.3064849078655243, successful = 0.3065
+2026-03-26 14:56:20 INFO     Epoch 18/400 Loss: -0.010559333488345146, reward: 0.3083336055278778, successful = 0.3083
+2026-03-26 14:56:48 INFO     Epoch 19/400 Loss: -0.010848215781152248, reward: 0.31004831194877625, successful = 0.3100
+2026-03-26 14:57:16 INFO     Epoch 20/400 Loss: -0.012172635644674301, reward: 0.311104953289032, successful = 0.3111
+2026-03-26 14:57:44 INFO     Epoch 21/400 Loss: -0.010032680816948414, reward: 0.3104875385761261, successful = 0.3105
+2026-03-26 14:58:12 INFO     Epoch 22/400 Loss: -0.010236594825983047, reward: 0.3108358085155487, successful = 0.3108
+2026-03-26 14:58:40 INFO     Epoch 23/400 Loss: -0.009649360552430153, reward: 0.313923180103302, successful = 0.3139
+2026-03-26 14:59:08 INFO     Epoch 24/400 Loss: -0.010331411845982075, reward: 0.3147255778312683, successful = 0.3147
+2026-03-26 14:59:37 INFO     Epoch 25/400 Loss: -0.009689065627753735, reward: 0.31351998448371887, successful = 0.3135
+2026-03-26 15:00:05 INFO     Epoch 26/400 Loss: -0.009736309759318829, reward: 0.3145287334918976, successful = 0.3145
+2026-03-26 15:00:33 INFO     Epoch 27/400 Loss: -0.009084009565412998, reward: 0.31508564949035645, successful = 0.3151
+2026-03-26 15:01:03 INFO     Epoch 28/400 Loss: -0.00982176698744297, reward: 0.31613823771476746, successful = 0.3161
+2026-03-26 15:01:33 INFO     Epoch 29/400 Loss: -0.0077970740385353565, reward: 0.3163045048713684, successful = 0.3163
+2026-03-26 15:02:03 INFO     Epoch 30/400 Loss: -0.009549722075462341, reward: 0.31653282046318054, successful = 0.3165
+2026-03-26 15:02:03 INFO     Save Model in logs
+2026-03-26 15:02:03 INFO     Start Val......
+2026-03-26 15:06:46 INFO     MRR at epoch 30: 0.41296295025508867
+2026-03-26 15:06:46 INFO     HITS@1 at epoch 30: 0.3240251754322506
+2026-03-26 15:06:46 INFO     HITS@3 at epoch 30: 0.465854011430225
+2026-03-26 15:06:46 INFO     HITS@10 at epoch 30: 0.5864501193662736
+2026-03-26 15:07:16 INFO     Epoch 31/400 Loss: -0.009177519008517265, reward: 0.31963738799095154, successful = 0.3196
+2026-03-26 15:08:00 INFO     Epoch 32/400 Loss: -0.009193407371640205, reward: 0.3203025162220001, successful = 0.3203
+2026-03-26 15:09:05 INFO     Epoch 33/400 Loss: -0.010609503835439682, reward: 0.3195832669734955, successful = 0.3196
+2026-03-26 15:10:12 INFO     Epoch 34/400 Loss: -0.008510188199579716, reward: 0.3201111853122711, successful = 0.3201
+2026-03-26 15:10:42 INFO     Epoch 35/400 Loss: -0.01074402779340744, reward: 0.32183292508125305, successful = 0.3218
+2026-03-26 15:11:11 INFO     Epoch 36/400 Loss: -0.009241372346878052, reward: 0.320979505777359, successful = 0.3210
+2026-03-26 15:11:41 INFO     Epoch 37/400 Loss: -0.008189490996301174, reward: 0.3221285939216614, successful = 0.3221
+2026-03-26 15:12:08 INFO     Epoch 38/400 Loss: -0.008386659435927868, reward: 0.32238829135894775, successful = 0.3224
+2026-03-26 15:12:37 INFO     Epoch 39/400 Loss: -0.007976708002388477, reward: 0.3228110671043396, successful = 0.3228
+2026-03-26 15:13:03 INFO     Episode Info - Batch Success Rate: 0.3184, Cumulative Success Rate: 0.2950, Target Entities: [18, 6165, 18], Predicted Entities: [95, 85, 756]
+2026-03-26 15:13:05 INFO     Epoch 40/400 Loss: -0.008782845921814442, reward: 0.3235671818256378, successful = 0.3236
+2026-03-26 15:13:33 INFO     Epoch 41/400 Loss: -0.008324731141328812, reward: 0.3236542344093323, successful = 0.3237
+2026-03-26 15:14:01 INFO     Epoch 42/400 Loss: -0.008313124999403954, reward: 0.32260167598724365, successful = 0.3226
+2026-03-26 15:14:29 INFO     Epoch 43/400 Loss: -0.00783730298280716, reward: 0.32142508029937744, successful = 0.3214
+2026-03-26 15:14:58 INFO     Epoch 44/400 Loss: -0.00701193418353796, reward: 0.3223443627357483, successful = 0.3223
+2026-03-26 15:15:27 INFO     Epoch 45/400 Loss: -0.008767800405621529, reward: 0.32315531373023987, successful = 0.3232
+2026-03-26 15:15:56 INFO     Epoch 46/400 Loss: -0.007842224091291428, reward: 0.32081785798072815, successful = 0.3208
+2026-03-26 15:16:26 INFO     Epoch 47/400 Loss: -0.006919696927070618, reward: 0.32103124260902405, successful = 0.3210
+2026-03-26 15:16:55 INFO     Epoch 48/400 Loss: -0.008318438194692135, reward: 0.32280710339546204, successful = 0.3228
+2026-03-26 15:17:24 INFO     Epoch 49/400 Loss: -0.007068316452205181, reward: 0.32306915521621704, successful = 0.3231
+2026-03-26 15:17:52 INFO     Epoch 50/400 Loss: -0.006814893800765276, reward: 0.3254943788051605, successful = 0.3255
+2026-03-26 15:18:20 INFO     Epoch 51/400 Loss: -0.007052960805594921, reward: 0.325349360704422, successful = 0.3253
+2026-03-26 15:18:48 INFO     Epoch 52/400 Loss: -0.005642245057970285, reward: 0.3242590129375458, successful = 0.3243
+2026-03-26 15:19:17 INFO     Epoch 53/400 Loss: -0.005351309664547443, reward: 0.3264097571372986, successful = 0.3264
+2026-03-26 15:19:46 INFO     Epoch 54/400 Loss: -0.006596274673938751, reward: 0.3275071680545807, successful = 0.3275
+2026-03-26 15:20:14 INFO     Epoch 55/400 Loss: -0.0071023800410330296, reward: 0.32923200726509094, successful = 0.3292
+2026-03-26 15:20:40 INFO     Episode Info - Batch Success Rate: 0.2930, Cumulative Success Rate: 0.3032, Target Entities: [177, 263, 332], Predicted Entities: [177, 263, 138]
+2026-03-26 15:20:43 INFO     Epoch 56/400 Loss: -0.0072118258103728294, reward: 0.3308674395084381, successful = 0.3309
+2026-03-26 15:21:11 INFO     Epoch 57/400 Loss: -0.009006462059915066, reward: 0.33037880063056946, successful = 0.3304
+2026-03-26 15:21:40 INFO     Epoch 58/400 Loss: -0.00759929558262229, reward: 0.3291418254375458, successful = 0.3291
+2026-03-26 15:22:08 INFO     Epoch 59/400 Loss: -0.008010605350136757, reward: 0.3316079378128052, successful = 0.3316
+2026-03-26 15:22:39 INFO     Epoch 60/400 Loss: -0.007854725234210491, reward: 0.33149105310440063, successful = 0.3315
+2026-03-26 15:22:39 INFO     Save Model in logs
+2026-03-26 15:22:39 INFO     Start Val......
+2026-03-26 15:27:21 INFO     MRR at epoch 60: 0.4183533457311901
+2026-03-26 15:27:21 INFO     HITS@1 at epoch 60: 0.32912537075888015
+2026-03-26 15:27:21 INFO     HITS@3 at epoch 60: 0.4725095854734862
+2026-03-26 15:27:21 INFO     HITS@10 at epoch 60: 0.5913694567025971
